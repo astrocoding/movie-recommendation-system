@@ -5,6 +5,7 @@ function App() {
   const [title, setTitle] = useState('');
   const [recommendations, setRecommendations] = useState([]);
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSearch = async () => {
     if (!title.trim()) {
@@ -12,6 +13,8 @@ function App() {
       setRecommendations([]);
       return;
     }
+
+    setIsLoading(true); // Mulai loading
 
     try {
       const response = await fetch('https://recommendation-api-u0ds.onrender.com/search', {
@@ -34,6 +37,8 @@ function App() {
     } catch (error) {
       setError('An unexpected error occurred.');
       setRecommendations([]);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -49,6 +54,7 @@ function App() {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
+      {isLoading && <div className="spinner"></div>} {/* Tampilkan spinner */}
       {error && <div className="error">{error}</div>}
       <div className="recommendations">
         {recommendations.length > 0 && <h2>Recommendations for "{title}"</h2>}
