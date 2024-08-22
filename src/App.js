@@ -7,6 +7,12 @@ function App() {
   const [error, setError] = useState('');
 
   const handleSearch = async () => {
+    if (!title.trim()) {
+      setError('Harap masukkan sesuatu ke kotak pencarian!');
+      setRecommendations([]);
+      return;
+    }
+
     try {
       const response = await fetch('https://recommendation-api-u0ds.onrender.com/search', {
         method: 'POST',
