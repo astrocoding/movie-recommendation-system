@@ -8,7 +8,7 @@ function App() {
 
   const handleSearch = async () => {
     try {
-      const response = await fetch('https://recommendation-api-4an0.onrender.com/', {
+      const response = await fetch('https://recommendation-api-u0ds.onrender.com/search', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
