@@ -1,9 +1,10 @@
-/* General styles */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   background-color: #f5f5f5;
 }
 
@@ -24,20 +25,23 @@ h1 {
 
 .search-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   margin: 20px 0;
 }
 
 input {
-  padding: 15px;
+  padding: 15px 15px 15px 40px;
   font-size: 1rem;
-  width: 80%;
+  width: 70%;
   max-width: 400px;
-  margin-bottom: 10px;
+  margin-right: 10px;
   border: 2px solid #ddd;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCI+CiAgICA8cGF0aCBkPSJNIDcgNCBDIDUuMzUgNCA0IDUuMzUgNCA3IEwgNCA0MyBDIDQgNDQuNjUgNS4zNSA0NiA3IDQ2IEwgNDMgNDYgQyA0NC42NSA0NiA0NiA0NC42NSA0NiA0MyBMIDQ2IDcgQyA0NiA1LjM1IDQ0LjY1IDQgNDMgNCBMIDcgNCB6IE0gMjIuNSAxMyBDIDI3Ljc0IDEzIDMyIDE3LjI2IDMyIDIyLjUgQyAzMiAyNC43NiAzMS4yMTA2MjUgMjYuODQwNzAzIDI5Ljg5MDYyNSAyOC40NzA3MDMgTCAzNy43MTA5MzggMzYuMjg5MDYyIEwgMzYuMjg5MDYyIDM3LjcxMDkzOCBMIDI4LjQ3MDcwMyAyOS44OTA2MjUgQyAyNi44NDA3MDMgMzEuMjEwNjI1IDI0Ljc2IDMyIDIyLjUgMzIgQyAxNy4yNiAzMiAxMyAyNy43NCAxMyAyMi41IEMgMTMgMTcuMjYgMTcuMjYgMTMgMjIuNSAxMyB6IE0gMjIuNSAxNSBBIDcuNSA3LjUgMCAwIDAgMTUgMjIuNSBBIDcuNSA3LjUgMCAwIDAgMjIuNSAzMCBBIDcuNSA3LjUgMCAwIDAgMzAgMjIuNSBBIDcuNSA3LjUgMCAwIDAgMjIuNSAxNSB6Ij48L3BhdGg+Cjwvc3ZnPg==') no-repeat 10px center;
+  background-size: 24px 24px;
   transition: all 0.3s ease;
 }
 
@@ -63,9 +67,11 @@ button:hover {
 }
 
 .error {
-  color: red;
+  color: rgb(201, 51, 51);
   margin-top: 20px;
   font-size: 1.1rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
 }
 
 .recommendations {
@@ -98,17 +104,23 @@ li:hover {
 
 /* Responsive styles */
 @media (max-width: 600px) {
+  .search-container {
+    flex-direction: column;
+  }
+
   h1 {
     font-size: 2rem;
   }
 
   input {
     width: 90%;
+    margin-right: 0;
+    margin-bottom: 10px;
+    padding-left: 40px;
   }
 
   button {
     width: 90%;
-    margin-top: 10px;
   }
 
   .recommendations h2 {

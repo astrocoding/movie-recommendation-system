@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Movie Recommendation System</h1>
+      <h1>Movie Recommendation</h1>
       <div className="search-container">
         <input
           type="text"
